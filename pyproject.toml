@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "env-guard-cli"
+version = "1.0.0"
+description = "A developer CLI to validate .env files against schema definitions, audit for committed secrets, and generate safe .env.example files."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "slopggobblercobbler81" }
+]
+keywords = [
+    "dotenv",
+    "env",
+    "secrets",
+    "security",
+    "validation",
+    "schema",
+    "credentials",
+    "cli",
+    "developer-tools"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Security",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+env-guard = "env_guard.cli:main"
+envguard = "env_guard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/slopggobblercobbler81/env-guard-cli"
+Repository = "https://github.com/slopggobblercobbler81/env-guard-cli.git"
+Issues = "https://github.com/slopggobblercobbler81/env-guard-cli/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
